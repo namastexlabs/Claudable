@@ -8,6 +8,8 @@ const nextConfig = {
     optimizeCss: false,
     scrollRestoration: true,
   },
+  // Required for Next.js 16+ with custom webpack config
+  turbopack: {},
   // Inject project root path as environment variable
   env: {
     NEXT_PUBLIC_PROJECT_ROOT: process.cwd(),
