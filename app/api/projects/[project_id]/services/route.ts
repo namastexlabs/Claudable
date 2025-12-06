@@ -9,7 +9,7 @@ export async function GET(_request: Request, { params }: RouteContext) {
   try {
     const { project_id } = await params;
     const services = await listProjectServices(project_id);
-    const payload = services.map((service) => ({
+    const payload = services.map((service: { serviceData?: unknown; [key: string]: unknown }) => ({
       ...service,
       service_data: service.serviceData,
     }));
